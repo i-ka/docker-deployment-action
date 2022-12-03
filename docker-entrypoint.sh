@@ -60,12 +60,12 @@ fi
 case $INPUT_DEPLOYMENT_MODE in
 
   docker-swarm)
-    DEPLOYMENT_COMMAND="docker $DEPLOYMENT_COMMAND_OPTIONS stack deploy --compose-file $STACK_FILE"
+    DEPLOYMENT_COMMAND="docker $DEPLOYMENT_COMMAND_OPTIONS stack deploy --compose-file $INPUT_DEPLOY_PATH/$STACK_FILE"
   ;;
 
   *)
     INPUT_DEPLOYMENT_MODE="docker-compose"
-    DEPLOYMENT_COMMAND="docker-compose $DEPLOYMENT_COMMAND_OPTIONS -f $STACK_FILE"
+    DEPLOYMENT_COMMAND="docker-compose $DEPLOYMENT_COMMAND_OPTIONS -f $INPUT_DEPLOY_PATH/$STACK_FILE"
   ;;
 esac
 
